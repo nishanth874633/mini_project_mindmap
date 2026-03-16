@@ -1,9 +1,24 @@
+function signup(){
+
+const user=document.getElementById("newUser").value;
+const pass=document.getElementById("newPass").value;
+
+localStorage.setItem("username",user);
+localStorage.setItem("password",pass);
+
+document.getElementById("msg").innerText="Account created. Login now.";
+
+}
+
 function login(){
 
-const username=document.getElementById("username").value;
-const password=document.getElementById("password").value;
+const user=document.getElementById("username").value;
+const pass=document.getElementById("password").value;
 
-if(username==="admin" && password==="1234"){
+const savedUser=localStorage.getItem("username");
+const savedPass=localStorage.getItem("password");
+
+if(user===savedUser && pass===savedPass){
 
 localStorage.setItem("loggedIn","true");
 
@@ -11,33 +26,7 @@ window.location.href="index.html";
 
 }else{
 
-document.getElementById("error").innerText="Invalid username or password";
-
-}
-
-}
-
-/* Auto redirect if already logged in */
-
-if(localStorage.getItem("loggedIn")==="true"){
-
-window.location.href="index.html";
-
-}
-function login(){
-
-const username=document.getElementById("username").value;
-const password=document.getElementById("password").value;
-
-if(username==="admin" && password==="1234"){
-
-localStorage.setItem("loggedIn","true");
-
-window.location.href="index.html";
-
-}else{
-
-document.getElementById("error").innerText="Invalid Username or Password";
+document.getElementById("error").innerText="Invalid login";
 
 }
 
