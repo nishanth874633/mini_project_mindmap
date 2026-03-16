@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>MindMap Login</title>
+<title>MindMap Studio</title>
 <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
 
-<div class="loginContainer">
+<div class="container">
+
+<div class="info">
+<h1>🧠 MindMap Studio</h1>
+
+<p>
+Organize your thoughts visually and build connections between ideas.
+A simple tool for brainstorming and planning.
+</p>
+
+</div>
 
 <div class="loginBox">
 
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="avatar">
-
-<h2>MindMap Login</h2>
+<h2>Login</h2>
 
 <input type="text" id="username" placeholder="Username">
 
@@ -21,13 +29,18 @@
 
 <button onclick="login()">Login</button>
 
+<p>
+Don't have an account?
+<a href="signup.html">Sign Up</a>
+</p>
+
 <p id="error"></p>
 
 </div>
 
 </div>
 
-<script src="login.js"></script>
+<script src="auth.js"></script>
 
 </body>
 </html>
